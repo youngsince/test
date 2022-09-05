@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/style.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/common.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.validator.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/zh_cn.js"></script>
+</head>
+<body>
+{eyou:include file="/template/pc/header.htm"/}
+<div class="pmain w980"> {eyou:include file="/template/pc/left.htm"/}
+  <div class="main_main fr">
+    <div class="tl_a">
+      <h2>{$eyou.field.typename}</h2>
+      <div class="more fr">当前位置： {eyou:position style="crumb" /}</div>
+    </div>
+    <!--文章内容开始-->
+    <div class="pFC">
+      <h3>{$eyou.field.title}</h3>
+      <div class="pubDate relative"> <span class="date">发布时间：{$eyou.field.add_time|MyDate='Y-m-d H:i:s',###}</span> <span class="font">点击量：<a id="hits">{eyou:arcclick /}</a></span></br>
+        <span class="absolute baiduFx">
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> </div>
+        </span></div>
+      <div class="text">
+        <div id="zoom"> {$eyou.field.content} </div>
+      </div>
+      <div class="fenyefh"><a href="javascript:history.go(-1);" title="返回列表">[返回列表]</a></div>
+      <div class="fenyeud">{eyou:prenext get="pre" empty="<a>上一篇：暂无</a>"} <a href="{$field.arcurl}" title="{$field.title}"> 上一篇 : {$field.title}</a> {/eyou:prenext}</div>
+      <div class="fenyeud">{eyou:prenext get="next" empty="<a>下一篇：暂无</a>"} <a href="{$field.arcurl}" title="{$field.title}"> 下一篇: {$field.title}</a> {/eyou:prenext}</div>
+    </div>
+    <!--文章内容结束--> 
+  </div>
+  <div class="clear"></div>
+</div>
+{eyou:include file="/template/pc/footer.htm"/}
+</body>
+</html>

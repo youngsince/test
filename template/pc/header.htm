@@ -1,0 +1,66 @@
+<!--页头开始-->
+
+<div class="header">
+  <div class="top w980">
+    <div class="t_logo fl"><a href="{eyou:global name='web_cmsurl' /}/" title="{eyou:global name="web_name" /}"> <img src="{eyou:global name="web_logo" /}" width="450px" height="90px"/></a></div>
+    <!--搜索栏开始-->
+    {eyou:searchform type='default'}
+    <form class="t_srh fr relative" method="get" action="{$field.action}">
+    {$field.hidden}
+      <input class="s_txt" type="text" name="keywords" value="请输入关键字" onfocus="if(this.value==defaultValue)this.value=''" onblur="if(this.value=='')this.value=defaultValue">
+      <input class="s_btn" type="submit" name="submit" id="" value=" " class="search_submit" src="{eyou:global name='web_templets_pc' /}/skin/images/icon1.jpg" />
+    </form>
+    {/eyou:searchform}
+    <!--搜索栏结束-->
+    <div class="t_tel fr">TEL:：{eyou:global name='web_attr_2' /}</div>
+  </div>
+  
+  <!--导航开始-->
+  <div class="nav">
+    <ul class="w980">
+      <li class="n_son {eyou:eq name='$Think.const.CONTROLLER_NAME' value='Index'}jd{/eyou:eq}"><a href="{eyou:global name='web_cmsurl' /}/" title= "网站首页">网站首页</a></li>
+      {eyou:channel type="top" row="10" id="field" currentstyle="jd"}
+      <li class="n_son {$field.currentstyle}"><a href="{$field.typeurl}">{$field.typename}</a> {eyou:notempty name="$field.children"}
+        <div class="common-nav2">
+          <div class="common-nav2_in"> {eyou:channel name="$field.children" row="10" id="field2"}
+            <div><a href="{$field2.typeurl}">{$field2.typename}</a></div>
+            {/eyou:channel} </div>
+        </div>
+        {/eyou:notempty} </li>
+      {/eyou:channel}
+    </ul>
+  </div>
+  <!--导航结束--> 
+  
+  <!--幻灯片大图开始-->
+  <div class="banner">
+    <div id="slideBox" class="slideBox">
+      <div class="bd">
+        <ul>
+          {eyou:adv pid='1'}
+          <li style="background: url({$field.litpic}) center center no-repeat;"><a href="{$field.links}"><img src="{eyou:global name='web_templets_pc' /}/skin/images/no.gif"/></a></li>
+          {/eyou:adv}
+        </ul>
+      </div>
+      <div class="hd">
+        <ul>
+          {eyou:adv pid='1'}
+          <li></li>
+          {/eyou:adv}
+        </ul>
+      </div>
+      <a href="javascript:void(0)" class="prev"></a> <a href="javascript:void(0)" class="next"></a> </div>
+    <script src="{eyou:global name='web_templets_pc' /}/skin/js/banner.js"></script> 
+  </div>
+  <!--幻灯片大图结束--> 
+  
+  <!--网站公告开始-->
+  <div class="notice w980">
+    <h2 class="n_tl fl">网站公告：</h2>
+    <marquee scrollamount="2" scrolldelay="5" onMouseOut="this.start()" onMouseOver="this.stop()">
+    {eyou:global name='web_attr_58' /}
+    </marquee>
+  </div>
+  <!--网站公告结束--> 
+</div>
+<!--页头结束--> 

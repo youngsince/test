@@ -1,0 +1,34 @@
+<div class="main_sider fl"> 
+  <!--项目分类开始--> 
+  {eyou:channelartlist typeid='35'}
+  <div class="category">
+    <div class="tl_a">
+      <h2>{eyou:field name='typename'/}</h2>
+    </div>
+    <ul class="category_con">
+      {eyou:channel type="son" currentstyle="cu"}
+      <li class="clason"><a class="sidenava {$field.currentstyle}" href="{$field.typeurl}">{$field.typename}</a> </li>
+      {/eyou:channel}
+    </ul>
+  </div>
+  {/eyou:channelartlist} 
+  <!--项目分类结束--> 
+  
+  <!--荣誉资质开始--> 
+  {eyou:channelartlist typeid='35'}
+  <div class="spart mar_t10p">
+    <div class="tl_a">
+      <h2>{eyou:field name='typename'/}</h2>
+      <div class="more fr"><a href="{eyou:field name='typeurl'/}" title="更多">更多</a></div>
+    </div>
+    <div class="spart_con">
+      <ul>
+        {eyou:arclist row='6' titlelen='30' infolen='20'}
+        <li><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}" alt="{$field.title}" width="71" height="54"/></a></li>
+        {/eyou:arclist}
+      </ul>
+    </div>
+  </div>
+  {/eyou:channelartlist} 
+  <!--荣誉资质结束--> 
+</div>

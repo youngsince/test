@@ -1,0 +1,58 @@
+<!--页尾开始-->
+
+<div class="footer"> 
+  <!--联系我们开始--> 
+  {eyou:channelartlist typeid='43'}
+  <div class="contact">
+    <div class="w980">
+      <div class="tl_a">
+        <h2>{eyou:field name='typename'/}</h2>
+        <h3>{eyou:field name='englist_name'/}</h3>
+        <div class="more fr"><a href="{eyou:field name='typeurl'/}">详细</a></div>
+      </div>
+      <div class="contact_con">
+        <div class="tel fl"><span>服务热线：</span>{eyou:global name='web_attr_2' /}  / {eyou:global name='web_attr_1' /} </div>
+        <ul class="fl">
+          <li class="png"><span><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon2.png" ></span>{eyou:global name='web_attr_54' /}</li>
+          <li class="png"><span><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon3.png" ></span>{eyou:global name='web_attr_2' /}</li>
+          <li class="png"><span><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon4.png" ></span>{eyou:global name='web_attr_55' /}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {/eyou:channelartlist} 
+  <!--联系我们结束--> 
+  
+  <!--友情链接开始-->
+  <div class="link">
+    <div class="w980 png">
+      <h2 class="l_tl fl png">友情链接</h2>
+      <div class="l_con fl"> {eyou:flink titlelen='20' row='20' type='1'}<span><a href="{$field.url}"  title="{$field.title}" {$field.target}>{$field.title}</a></span>{/eyou:flink} </div>
+    </div>
+  </div>
+  <!--友情链接结束-->
+  
+  <div class="bottom w980 png">
+    <div class="b_infor"> <span>地址：{eyou:global name='web_attr_54' /}</span> <span>电话：{eyou:global name='web_attr_2' /}</span> <span>手机：{eyou:global name='web_attr_1' /}</span><br/>
+      <span>{eyou:global name='web_copyright' /}</span> <span>ICP备案编号：{eyou:global name='web_recordnum' /}</span> </div>
+  </div>
+</div>
+<!--页尾结束--> 
+<!--浮动工具开始-->
+<div class="c-tools">
+  <ul>
+    <li class="tel-ico"><span>手机：{eyou:global name='web_attr_1' /}<br>
+      电话:{eyou:global name='web_attr_2' /}</span></li>
+    <li class="ewm-ico"><span class="ewmPic"> <img src="{eyou:global name='web_attr_4' /}"/></span></li>
+    <li class="qq-ico"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin={eyou:global name='web_attr_3' /}&amp;site=qq&amp;menu=yes"><span>QQ：{eyou:global name='web_attr_3' /}</span></a></li>
+    <li class="top-ico"></li>
+  </ul>
+</div>
+<!--浮动工具结束--> 
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/search.js"></script> 
+<!-- 应用插件标签 start --> 
+{eyou:weapp type='default'/} 
+<!-- 应用插件标签 end --> 
+<!-- 网站第三方代码 start --> 
+{eyou:global name='web_thirdcode_pc'/} 
+<!-- 网站第三方代码 end -->

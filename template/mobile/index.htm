@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>{eyou:global name='web_title' /}</title>
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/subpage.css">
+<script src="{eyou:global name='web_templets_m' /}/skin/js/jquery.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/nav.js"></script>
+<style>
+.head {
+	background: #fabd00
+}
+.foot {
+	background: #4c4944
+}
+.nav {
+	background: #4c4944
+}
+.nav_color {
+	background: #4c4944
+}
+</style>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/search.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/respond.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/jquery.validator.js"></script>
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/master.css">
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/swiper.css">
+<script src="{eyou:global name='web_templets_m' /}/skin/js/swipe.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/lihe.js"></script>
+</head>
+<body>
+<!--导航开始--> 
+{eyou:include file="/template/mobile/header.htm" /} 
+<!--导航结束--> 
+<!--内容开始-->
+<div class="allpage">
+  <div class="black-fixed iconfont">&#xe60f;</div>
+  <!--页头开始-->
+  <div class="header">
+    <div class="head"> <a href="{eyou:global name='web_cmsurl' /}/"  title="{eyou:global name="web_name"/}" class="logo"> <img src="{eyou:global name="web_logo"/}"/> </a>
+      <div class="nav-btn commonfont">&#xe60b;</div>
+      <div class="search_hl iconfont">&#xe600;</div>
+      <div class="search" style="display: block;">
+        {eyou:searchform type='default'}
+        <form method="get" action="{$field.action}">
+        {$field.hidden}
+          <a class="xbtn iconfont" href="javascript:;">&#xe60f;</a>
+          <input type="text" name="keywords" class="search-input" placeholder="请输入关键词" onFocus="if(this.value==defaultValue)this.value=''" onBlur="if(this.value=='')this.value=defaultValue">
+          <input type="submit" class="search-btn iconfont" value="&#xe600;">
+        </form>
+        {/eyou:searchform}
+      </div>
+    </div>
+  </div>
+  <!--页头结束-->
+  <div class="content content_new"> 
+    <!--幻灯片图片开始-->
+    <div class="banner">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"> {eyou:adv pid='1'}
+          <div class="swiper-slide"><img src="{$field.litpic}"></div>
+          {/eyou:adv} </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!--幻灯片图片结束--> 
+    
+    <!--首页导航开始-->
+    <div class="hnav1 clear-fix"> {eyou:channel type="top" row="8" id="field"} <a href="{$field.typeurl}" class="son">{$field.typename}</a> {/eyou:channel} </div>
+    <!--首页导航结束--> 
+    
+    <!--主营项目开始--> 
+    {eyou:channelartlist typeid='35'}
+    <div class="honor_i">
+      <div class="more_i"><span>{eyou:field name='typename'/}</span><a href="{eyou:field name='typeurl'/}" title="">更多</a></div>
+      <div class="clear"></div>
+      <div class="honor_i_c">
+        <ul>
+          {eyou:arclist row='4' titlelen='30'}
+          <li><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}" alt="{$field.title}"><span>{$field.title}</span></a></li>
+          {/eyou:arclist}
+        </ul>
+        <div class="c"></div>
+      </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--主营项目结束--> 
+    
+    <!--关于我们开始--> 
+    {eyou:channelartlist typeid='1'}
+    <div class="about_i">
+      <div class="more_i"><span>{eyou:field name='typename'/}</span><a href="{eyou:field name='typeurl'/}" title="">更多</a></div>
+      <div class="clear"></div>
+      <div class="about_i_c">
+        <p>{eyou:type typeid='1' addtable='single_content'}{$field.content|html_msubstr=###,0,118,true}{/eyou:type}</p>
+      </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--关于我们结束--> 
+    
+    <!--新闻动态开始--> 
+    {eyou:channelartlist typeid='2'}
+    <div class="case_i">
+      <div class="more_i"><span>{eyou:field name='typename'/}</span><a href="{eyou:field name='typeurl'/}" title="">更多</a></div>
+      <div class="clear"></div>
+      <div class="case_i_c ">
+        <ul>
+          {eyou:arclist row='5' titlelen='30' infolen='20'}
+          <li><a href="{$field.arcurl}" title="{$field.title}">
+            <h2 >{$field.title}</h2>
+            </a></li>
+          {/eyou:arclist}
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--新闻动态结束--> 
+    
+    <!--荣誉资质开始--> 
+    {eyou:channelartlist typeid='42'}
+    <div class="honor_i">
+      <div class="more_i"><span>{eyou:field name='typename'/}</span><a href="{eyou:field name='typeurl'/}" title="">更多</a></div>
+      <div class="clear"></div>
+      <div class="iproZdp2 clear-fix"> {eyou:arclist row='6' titlelen='30' infolen='20'}
+        <dl class="metro-b clear-fix">
+          <a href="{$field.arcurl}" title="{$field.title}">
+          <dt class="pic"><img src="{$field.litpic}" alt="{$field.title}"></dt>
+          <dd class="text">{$field.title}</dd>
+          </a>
+        </dl>
+        {/eyou:arclist} </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--荣誉资质结束--> 
+    
+    <!--车间设备开始--> 
+    {eyou:channelartlist typeid='40'}
+    <div class="honor_i">
+      <div class="more_i"><span>{eyou:field name='typename'/}</span><a href="{eyou:field name='typeurl'/}" title="">更多</a></div>
+      <div class="clear"></div>
+      <div class="honor_i_h">
+        <ul>
+          {eyou:arclist row='2' titlelen='30' infolen='20'}
+          <li><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}" alt="{$field.title}"></a></li>
+          {/eyou:arclist}
+        </ul>
+        <div class="c"></div>
+      </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--车间设备结束--> 
+    
+    <!--联系我们开始-->
+    <div class="baomingfra">
+      <div class="baoming">
+        <div>{eyou:global name='web_attr_2' /}</div>
+        <span>地址：{eyou:global name='web_attr_54' /}</span> <span>邮箱：{eyou:global name='web_attr_55' /}</span>
+        <div class="c"></div>
+      </div>
+    </div>
+    <!--联系我们结束-->
+    
+    <div class="cbtn-top"><a href="javascript:;"><img src="{eyou:global name='web_templets_m' /}/skin/images/goTop.png"></a></div>
+  </div>
+  {eyou:include file="/template/mobile/footer.htm" /} </div>
+<!--内容结束-->
+</body>
+</html>

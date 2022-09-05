@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/subpage.css">
+<script src="{eyou:global name='web_templets_m' /}/skin/js/jquery.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/nav.js"></script>
+<style>
+.head {
+	background: #fabd00
+}
+.foot {
+	background: #4c4944
+}
+.nav {
+	background: #4c4944
+}
+.nav_color {
+	background: #4c4944
+}
+</style>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/search.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/respond.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/jquery.validator.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/jquery.tips.js"></script>
+<script src="{eyou:global name='web_templets_m' /}/skin/js/zh_cn.js"></script>
+</head>
+<body>
+<!--导航开始--> 
+{eyou:include file="/template/mobile/header.htm" /} 
+<!--导航结束--> 
+<!--内容开始-->
+<div class="allpage">
+  <div class="black-fixed iconfont">&#xe60f;</div>
+  <!--页头开始-->
+  <div class="header">
+    <div class="head"> <a href="{eyou:global name='web_cmsurl' /}/" title="首页" class="home-btn commonfont">&#xe608;</a>
+      <p class="top-title">{$eyou.field.typename}</p>
+      {eyou:notempty name="$eyou.field.has_children"}
+      <div class="class-btn"><span class="commonfont">&#xe60a;</span>分类</div>
+      {/eyou:notempty}
+      <div class="nav-btn commonfont">&#xe60b;</div>
+    </div>
+    <div class="type">
+      <h1>栏目分类：</h1>
+      <ul>
+        {eyou:channel type="sonself"}
+        <li><a href="{$field.typeurl}">{$field.typename}</a><span class="commonfont class-down">&#xe60c;</span></li>
+        {/eyou:channel}
+      </ul>
+    </div>
+  </div>
+  <!--页头结束--> 
+  <!--在线留言开始-->
+  <div class="content">
+    <ul class="login">
+      {eyou:guestbookform type='default'}
+      <form action="{$field.action}" enctype="multipart/form-data" class="msgForm form_book" method="post">
+        <li>
+          <input type="text" name="{$field.attr_4}" id="{$field.attr_4}" maxlength="20" placeholder="姓名" data-rule="姓名:required;" class="login_input " />
+        </li>
+        <li>
+          <input type="text" name="{$field.attr_5}" maxlength="20" placeholder="电话" data-rule="电话:required;mobile|tel" class="login_input" >
+        </li>
+        <li>
+          <input type="text" name="{$field.attr_9}" id="{$field.attr_9}" maxlength="20" placeholder="地址" data-rule="地址:required;" class="login_input " />
+        </li>
+        <li>
+          <textarea name="{$field.attr_6}" cols="" rows="" data-rule="咨询内容:required;"  onKeyUp="strlen_verify(this,'booklen',255)" placeholder="咨询内容" class="login_textarea" ></textarea>
+        </li>
+        <li>
+          <input class="login_btn common_bg" type="submit" value="提   交">
+        </li>
+        {$field.hidden}
+      </form>
+      {/eyou:guestbookform}
+    </ul>
+  </div>
+  <!--在线留言结束--> 
+  
+  {eyou:include file="/template/mobile/footer.htm" /} </div>
+<!--内容结束-->
+</body>
+</html>

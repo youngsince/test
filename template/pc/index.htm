@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{eyou:global name='web_title' /}</title>
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/style.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/common.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.validator.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/zh_cn.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/index.js"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/liscroll_gd.js"></script>
+</head>
+<body>
+{eyou:include file="/template/pc/header.htm"/} 
+<!--主营项目开始--> 
+{eyou:channelartlist typeid='35'}
+<div class="main_a">
+  <div class="w980">
+    <div class="scrollpic">
+      <div class="tl_a">
+        <h2>{eyou:field name='typename'/}</h2>
+        <h3>{eyou:field name='englist_name'/}</h3>
+        <div class="tl_a_btn fr"> <span class="btn1"><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon5.jpg"  width="14" height="23" id="left" /></span> <span class="btn2"><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon6.jpg"  width="14" height="23" id="right" /></span> </div>
+      </div>
+      <div id="myscroll">
+        <div id="myscrollbox">
+          <ul>
+            {eyou:arclist titlelen='30'}
+            <li><a href="{$field.arcurl}" title="{$field.title}" class="bt"><img src="{$field.litpic}" alt="{$field.title}" width="203" height="150"><span class="intro">
+              <h5 >{$field.title}</h5>
+              <p class="main_a_more fr"><span>HOT</span></p>
+              </span></a></li>
+            {/eyou:arclist}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/eyou:channelartlist} 
+
+<!--主营项目结束--> 
+{eyou:channelartlist typeid='2'}
+<div class="main_b">
+  <div class="w980"> 
+    <!--新闻动态开始-->
+    <div class="inews fl">
+      <div class="tl_a">
+        <h2>{eyou:field name='typename'/}</h2>
+        <h3>{eyou:field name='englist_name'/}</h3>
+        <div class="more fr"><a href="{eyou:field name='typeurl'/}" title="更多">更多</a></div>
+      </div>
+      <div class="news_con"> 
+        <!--幻灯广告开始-->
+        <div class="news_huan fl">
+          <div class="hdp_container"> {eyou:arclist limit='0,2' titlelen='30'} <a href="{$field.arcurl}" ><img src="{$field.litpic}" ></a> {/eyou:arclist} </div>
+          <script src="{eyou:global name='web_templets_pc' /}/skin/js/tab.js"></script> 
+          <script>
+$(function(){
+$(".hdp_container").OM_HDP({delay:300,time:5000,title:1,type:2});
+})</script> 
+        </div>
+        <!--幻灯广告结束-->
+        <div class="news_list fr">
+          <ul>
+            {eyou:arclist limit='2,8' titlelen='30'}
+            <li><span>【{$field.add_time|MyDate='Y/m/d',###}】</span><a href="{$field.arcurl}" title="{$field.title}" >{$field.title}</a></li>
+            {/eyou:arclist}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--新闻动态开始--> 
+    
+    <!--荣誉资质开始--> 
+    {eyou:channelartlist typeid='42'}
+    <div class="ipart fr">
+      <div class="tl_a">
+        <h2>{eyou:field name='typename'/}</h2>
+        <h3>{eyou:field name='englist_name'/}</h3>
+        <div class="more fr"><a href="{eyou:field name='typeurl'/}" title="更多">更多</a></div>
+      </div>
+      <div class="ipart_con">
+        <ul>
+          {eyou:arclist row='6' titlelen='30' infolen='20'}
+          <li><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}" alt="{$field.title}" width="103" height="78"/></a></li>
+          {/eyou:arclist}
+        </ul>
+      </div>
+    </div>
+    {/eyou:channelartlist} 
+    <!--荣誉资质结束--> 
+  </div>
+</div>
+
+<!--车间设备开始--> 
+{eyou:channelartlist typeid='40'}
+<div class="main_c">
+  <div class="iequip w980">
+    <div class="tl_a">
+      <h2>{eyou:field name='typename'/}</h2>
+      <h3>{eyou:field name='englist_name'/}</h3>
+      <div class="more fr"><a href="{eyou:field name='typeurl'/}" title="更多">更多</a></div>
+    </div>
+    <div class="iequip_con">
+      <div class="ctrl ctrl1"><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon7.jpg"  width="27" height="56" /></div>
+      <div id="ScrollBox">
+        <ul>
+          {eyou:arclist row='6' titlelen='30' infolen='20'}
+          <li>
+            <div class="pic"><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}" alt="{$field.title}" width="174" height="129"/></a></div>
+            <div class="text">
+              <h4><a href="{$field.arcurl}" title="{$field.title}" >{$field.title}</a></h4>
+            </div>
+          </li>
+          {/eyou:arclist}
+        </ul>
+      </div>
+      <div class="ctrl ctrl2"><img src="{eyou:global name='web_templets_pc' /}/skin/images/icon8.jpg"  width="27" height="56" /></div>
+    </div>
+  </div>
+</div>
+{/eyou:channelartlist} 
+<!--车间设备结束--> 
+{eyou:include file="/template/pc/footer.htm"/}
+</body>
+</html>
